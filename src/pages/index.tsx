@@ -9,8 +9,6 @@ type Props = {
   title: string
 }
 
-const bla = 'var'
-
 export default function Home({ title = 'liga a props do pai' }: Props) {
   return (
     <>
