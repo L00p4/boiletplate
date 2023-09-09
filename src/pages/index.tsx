@@ -9,7 +9,7 @@ type Props = {
   title: string
 }
 
-const lame = 'lame'
+const lamer = 'lame'
 
 export default function Home({ title = 'liga a props do pai' }: Props) {
   return (
