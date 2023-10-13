@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
 
 import Main from '.'
 
 describe('<Main />', () => {
-  it('shoud render heading', () => {
+  it('should render the heading', () => {
     const { container } = render(<Main />)
 
     expect(
@@ -12,5 +11,12 @@ describe('<Main />', () => {
     ).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
+  })
+
+  //tentar descobrir pq isso não funcionou
+  it('should render the colors correctly', () => {
+    const { container } = render(<Main />)
+
+    expect(container.firstChild).toHaveStyleRule('background-color', '#06092b')
   })
 })
