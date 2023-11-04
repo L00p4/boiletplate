@@ -32,3 +32,9 @@ const nextConfig = withPWA({
   // next config
 })
 module.exports = nextConfig
+
+module.exports = withPWA({
+  images: {
+    domains: ['media.graphassets.com']
+  }
+})

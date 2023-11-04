@@ -1,13 +1,16 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import NextNProgress from 'nextjs-progressbar'
+import SEO from '../../next-seo.config'
+
 import GlobalStyles from '../../styles/global'
+import { DefaultSeo } from 'next-seo'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>React Avançado - Boilerplate</title>
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -18,12 +21,18 @@ export default function App({ Component, pageProps }: AppProps) {
           crossOrigin=""
         />
         <meta name="theme-color" content="#06092b" />
-        <meta
-          name="description"
-          content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
-        />
       </Head>
+      <DefaultSeo {...SEO} />
       <GlobalStyles />
+      {/* se não passar props para o NextNProgress, esses valores são assumidos
+      por padrão */}
+      <NextNProgress
+        color="var(--highligh)"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+        showOnShallow={true}
+      />
       <Component {...pageProps} />
     </>
   )
