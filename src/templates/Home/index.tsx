@@ -21,7 +21,7 @@ export default function HomeTemplate({ places }: MapProps) {
             'A simple project starter to work with TypeScript, React, NextJS and Styled Components',
           images: [
             {
-              url: 'localhost:3000/img/fine.png',
+              url: '../../img/fine.png',
               width: 1280,
               height: 720
             }
